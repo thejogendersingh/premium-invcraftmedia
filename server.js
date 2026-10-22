@@ -2,7 +2,10 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = __dirname;
+// Prefer process.cwd() (used in Vercel serverless environment), fallback to __dirname
+const ROOT = fs.existsSync(path.join(process.cwd(), 'index.html'))
+  ? process.cwd()
+  : __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -24,18 +27,34 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-const server = http.createServer((req, res) => {
+function handleRequest(req, res) {
   let cleanUrl = req.url.split('?')[0];
   try {
     cleanUrl = decodeURIComponent(cleanUrl);
   } catch (e) {}
 
-  if (cleanUrl === '/' || cleanUrl === '') {
-    cleanUrl = '/index.html';
+  let relativePath = cleanUrl.replace(/^\/+/, '');
+  if (!relativePath || relativePath === '') {
+    relativePath = 'index.html';
   }
 
-  const safePath = path.normalize(cleanUrl).replace(/^(\.\.[\/\\])+/, '');
-  const filePath = path.join(ROOT, safePath);
+  // Prevent path traversal
+  const safeRelative = path.normalize(relativePath).replace(/^(\.\.[\/\\])+/, '');
+  let filePath = path.join(ROOT, safeRelative);
+
+  // If pointing to a directory, check for index.html inside
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
+  // If not found directly, try appending .html or fallback to index.html for root routes
+  if (!fs.existsSync(filePath)) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+    } else if (!path.extname(filePath)) {
+      filePath = path.join(ROOT, 'index.html');
+    }
+  }
 
   if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -83,21 +102,29 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, head);
     fs.createReadStream(filePath).pipe(res);
   }
-});
-
-function startServer(port) {
-  server.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-  });
-  server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.log(`Port ${port} in use, trying ${port + 1}...`);
-      startServer(port + 1);
-    } else {
-      console.error('Server error:', err);
-    }
-  });
 }
 
-const defaultPort = parseInt(process.env.PORT, 10) || 5173;
-startServer(defaultPort);
+// Export request handler for Vercel Serverless Function
+module.exports = handleRequest;
+
+// If executed directly (e.g. `node server.js` for local development), start listener
+if (require.main === module) {
+  const server = http.createServer(handleRequest);
+
+  function startServer(port) {
+    server.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}/`);
+    });
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.log(`Port ${port} in use, trying ${port + 1}...`);
+        startServer(port + 1);
+      } else {
+        console.error('Server error:', err);
+      }
+    });
+  }
+
+  const defaultPort = parseInt(process.env.PORT, 10) || 5173;
+  startServer(defaultPort);
+}

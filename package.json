@@ -2,6 +2,7 @@
   "name": "catherine-and-james-wedding",
   "version": "1.0.0",
   "description": "Catherine & James — A Christian Wedding Invitation Template",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
