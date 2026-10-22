@@ -28,26 +28,36 @@ const MIME_TYPES = {
 };
 
 function handleRequest(req, res) {
-  let cleanUrl = req.url.split('?')[0];
+  let requestedPath = '';
   try {
-    cleanUrl = decodeURIComponent(cleanUrl);
-  } catch (e) {}
+    const urlObj = new URL(req.url, 'http://localhost');
+    const pathParam = urlObj.searchParams.get('path');
+    if (pathParam !== null && pathParam !== undefined) {
+      requestedPath = pathParam;
+    } else {
+      requestedPath = req.headers['x-matched-path'] || req.headers['x-forwarded-uri'] || urlObj.pathname;
+    }
+    requestedPath = decodeURIComponent(requestedPath);
+  } catch (e) {
+    requestedPath = req.url || '';
+  }
 
-  let relativePath = cleanUrl.replace(/^\/+/, '');
-  if (!relativePath || relativePath === '') {
+  // Strip leading slashes
+  let relativePath = requestedPath.replace(/^\/+/, '');
+  if (!relativePath || relativePath === '' || relativePath === 'server.js') {
     relativePath = 'index.html';
   }
 
-  // Prevent path traversal
+  // Prevent directory traversal
   const safeRelative = path.normalize(relativePath).replace(/^(\.\.[\/\\])+/, '');
   let filePath = path.join(ROOT, safeRelative);
 
-  // If pointing to a directory, check for index.html inside
+  // If directory, check for index.html inside
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');
   }
 
-  // If not found directly, try appending .html or fallback to index.html for root routes
+  // Fallbacks: .html extension or index.html
   if (!fs.existsSync(filePath)) {
     if (fs.existsSync(filePath + '.html')) {
       filePath = filePath + '.html';
