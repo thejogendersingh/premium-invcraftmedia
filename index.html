@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta property="og:title" content="Catherine & James — Wedding Invitation" />
+<meta property="og:description" content="Celebrate with Catherine & James on 12th December 2026." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Catherine & James — Wedding Invitation" />
+<meta name="twitter:description" content="Celebrate with Catherine & James on 12th December 2026." />
+<script type="application/json" id="wedding-config">{"couple":{"bride":"Catherine","groom":"James","date":"2026-12-12","venue":"Immaculate Conception, Goa","whatsapp":"","hashtag":"#CatherineWedJames"},"invite":{"blessing":"","brideFather":"Mr. \u0026 Mrs. Michael D'Souza","brideMother":"","groomFather":"Mr. \u0026 Mrs. Robert Fernandes","groomMother":"","showGrandparents":false,"brideGF":"","brideGM":"","groomGF":"","groomGM":""},"events":[{"id":"welcome_dinner","name":"Welcome Dinner","emoji":"🍷","icon":"assets/Events/Welcome_Dinner.webp","date":"2026-12-11","time":"19:00","venue":"Fernandes Estate","desc":"A warm gathering of family and friends the evening before the wedding — share stories, laughter, and a candlelit meal.","mapsLink":""},{"id":"holy_matrimony","name":"Holy Matrimony","emoji":"⛪","icon":"assets/Events/Wedding_Ceremony.webp","date":"2026-12-12","time":"11:00","venue":"Immaculate Conception","desc":"The sacred ceremony where vows are exchanged and two hearts become one before God and all who love them.","mapsLink":""},{"id":"wedding_breakfast","name":"Wedding Breakfast","emoji":"🥂","icon":"assets/Events/Reception.webp","date":"2026-12-12","time":"13:00","venue":"Vivanta Goa","desc":"An elegant celebration lunch with family and close friends in the hours following the ceremony.","mapsLink":""},{"id":"evening_celebration","name":"Evening Celebration","emoji":"🎉","icon":"assets/Events/After_Party.webp","date":"2026-12-12","time":"19:30","venue":"Vivanta Goa","desc":"A grand evening reception to celebrate, dance, and make memories that will last a lifetime.","mapsLink":""}],"story":{"show":true,"storyText":"","storyMode":"story","customHashtag":"","tags":[],"showHashtagAsNames":false},"gallery":{"show":true,"layout":"4","photos":["assets/Demo/Demo_1.webp","assets/Demo/Demo_2.webp","assets/Demo/Demo_3.webp","assets/Demo/Demo_4.webp"]},"thingsToKnow":[{"id":"dresscode","label":"Dress Code","value":"Smart formal — florals and pastels for ladies, lounge suit for gentlemen. Please avoid all-white."},{"id":"venue","label":"Venue","value":"Please be seated by 10:45 AM. Ceremony is at 11:00 AM sharp and is unplugged — kindly silence phones."},{"id":"hotel","label":"Stay Options","value":"Rooms reserved at Vivanta Goa. Mention \"CatherineJamesWedding\" when booking. Reserve by 1 December 2026."},{"id":"gifts","label":"Gift Registry","value":"Your presence is our greatest gift. A registry is available on request."}],"rsvp":{"mode":"whatsapp","heading":"Will you join us?","subtext":"We have saved a place for you — at our table, in our hearts, and before God. Come celebrate with us as we begin this beautiful new chapter together.","btnText":"Yes, I'll Be There","whatsapp":""},"music":{"enabled":false,"src":"","name":""},"calendarUrls":{"google":"https://calendar.google.com/calendar/render?action=TEMPLATE\u0026text=Catherine%20weds%20James\u0026dates=20261212/20261213\u0026location=Immaculate%20Conception%2C%20Goa","apple":"https://shaadipath.com/api/calendar?title=Catherine%20weds%20James\u0026date=20261212\u0026end=20261213\u0026location=Immaculate%20Conception%2C%20Goa"}}</script>
+<script>window.__WEDDING_CONFIG__ = JSON.parse(document.getElementById('wedding-config').textContent);</script>
+<script>
+</script>
+<script>
+(function() {
+  var bride = 'Catherine';
+  var groom = 'James';
+  var date  = '12 December 2026';
+  function updatePreloader() {
+    // Names in preloader
+    var n1 = document.querySelector('.pl-n1');
+    var n2 = document.querySelector('.pl-n2');
+    if (n1) n1.textContent = bride;
+    if (n2) n2.textContent = groom;
+    // Names in hero copy
+    var hb = document.querySelector('.hc-bride');
+    var hg = document.querySelector('.hc-groom');
+    if (hb) hb.textContent = bride;
+    if (hg) hg.textContent = groom;
+    var htBrideEl = document.querySelector('#htBride .ht-name-inner');
+    var htGroomEl = document.querySelector('#htGroom .ht-name-inner');
+    if (htBrideEl && bride) htBrideEl.textContent = bride;
+    if (htGroomEl && groom) htGroomEl.textContent = groom;
+    var blInitials = document.querySelectorAll('.bl-initial');
+    if (blInitials.length >= 2 && bride && groom) {
+      blInitials[0].textContent = bride.charAt(0).toUpperCase();
+      blInitials[blInitials.length - 1].textContent = groom.charAt(0).toUpperCase();
+    }
+    var invN1 = document.getElementById('invName1');
+    var invN2 = document.getElementById('invName2');
+    if (invN1 && bride) invN1.textContent = bride;
+    if (invN2 && groom) invN2.textContent = groom;
+    var ftNms = document.querySelectorAll('.ft-name');
+    if (ftNms[0] && bride) ftNms[0].textContent = bride;
+    if (ftNms[1] && groom) ftNms[1].textContent = groom;
+    var htDateEl = document.getElementById('htDate');
+    if (htDateEl && date) {
+      var dp = date.split(' ');
+      if (dp.length === 3) htDateEl.innerHTML = dp[0] + ' &middot; ' + dp[1] + ' &middot; ' + dp[2];
+    }
+    /* Parent names — read directly from __WEDDING_CONFIG__ so this path always fires */
+    var _t10C = window.__WEDDING_CONFIG__ || {};
+    var _t10Inv = _t10C.invite || {};
+    var _t10P1 = [_t10Inv.brideFather, _t10Inv.brideMother].filter(Boolean);
+    var _t10P2 = [_t10Inv.groomFather, _t10Inv.groomMother].filter(Boolean);
+    var _t10BrideP = document.getElementById('invBrideParents');
+    var _t10GroomP = document.getElementById('invGroomParents');
+    if (_t10BrideP && _t10P1.length) _t10BrideP.textContent = _t10P1.join(' & ');
+    if (_t10GroomP && _t10P2.length) _t10GroomP.textContent = _t10P2.join(' & ');
+    /* Blessing */
+    var _t10Req = document.getElementById('invRequest');
+    if (_t10Req && _t10Inv.blessing) _t10Req.innerHTML = _t10Inv.blessing.replace(/\n/g, '<br>');
+    /* Grandparents */
+    if (_t10Inv.showGrandparents) {
+      var _gp1 = [_t10Inv.brideGF, _t10Inv.brideGM].filter(Boolean);
+      var _gp2 = [_t10Inv.groomGF, _t10Inv.groomGM].filter(Boolean);
+      if (_gp1.length || _gp2.length) {
+        var _gpSec = document.getElementById('invGrandparents');
+        if (_gpSec) {
+          _gpSec.style.display = '';
+          var _gpB = document.getElementById('invBrideGP'); if (_gpB && _gp1.length) _gpB.textContent = _gp1.join(' & ');
+          var _gpG = document.getElementById('invGroomGP'); if (_gpG && _gp2.length) _gpG.textContent = _gp2.join(' & ');
+        }
+      }
+    }
+    /* Invite section visibility */
+    if (_t10Inv.show === false) { var _invSec = document.getElementById('inviteSection'); if (_invSec) _invSec.style.display = 'none'; }
+    /* Footer date */
+    var _t10FtDate = document.querySelector('.ft-date');
+    if (_t10FtDate && date) { var _dp = date.split(' '); if (_dp.length === 3) _t10FtDate.innerHTML = _dp[0] + ' &middot; ' + _dp[1] + ' &middot; ' + _dp[2]; }
+
+    // Fallback: replace any leaf text still reading the placeholder names
+    document.querySelectorAll('*').forEach(function(el) {
+      if (el.children.length === 0 && el.textContent.trim() === 'Priya') el.textContent = bride;
+      if (el.children.length === 0 && el.textContent.trim() === 'Arjun') el.textContent = groom;
+    });
+    // Date injection
+    if (date) {
+      var found = false;
+      document.querySelectorAll('*').forEach(function(el) {
+        if (el.children.length === 0) {
+          var txt = el.textContent.trim();
+          if (
+            txt === '14 February 2025' || txt === '14 FEBRUARY 2025' ||
+            el.classList.contains('pre-date') ||
+            el.classList.contains('preloader-date') ||
+            el.classList.contains('pl-date')
+          ) {
+            el.textContent = date;
+            found = true;
+          }
+        }
+      });
+      // No existing date element found — insert one after .pl-names
+      if (!found) {
+        var container = document.querySelector('.pl-names') || document.querySelector('.pl-content');
+        if (container && !container.querySelector('.pl-date-injected')) {
+          var dateEl = document.createElement('span');
+          dateEl.className = 'pl-date-injected';
+          dateEl.textContent = date;
+          dateEl.style.cssText = 'display:block;font-family:"DM Sans",sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,152,90,0.75);margin-top:10px;';
+          container.appendChild(dateEl);
+        }
+      }
+    }
+  }
+  updatePreloader();
+  document.addEventListener('DOMContentLoaded', updatePreloader);
+})();
+</script><style>
+.ev-reveal,.st-reveal,.gl-reveal,.ttk-card,.cd-reveal{opacity:1!important;filter:blur(0)!important;transform:none!important}
+.st-letter-divider{opacity:0.88!important}
+</style>
+
+<meta name="color-scheme" content="only light">
+<style>:root,html,body{color-scheme:only light}</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catherine &amp; James's Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="intro-active">
+
+<!-- ═══════════════════════════════════
+     INTRO — Champagne cork interaction
+═══════════════════════════════════ -->
+<section class="intro" id="intro" aria-label="Opening scene">
+
+  <!-- Scene background -->
+  <img class="intro-bg" id="introBg"
+       src="assets/intro/cv-champ-bg-entry-m.webp"
+       alt="" decoding="async" fetchpriority="high" draggable="false">
+
+  <!-- Layered atmosphere -->
+  <div class="intro-atm-top"    aria-hidden="true"></div>
+  <div class="intro-atm-bot"    aria-hidden="true"></div>
+  <div class="intro-atm-center" aria-hidden="true"></div>
+
+  <!-- Radial vignette — edges fall to dark, keeps eye on bottle -->
+  <div class="intro-vignette" aria-hidden="true"></div>
+
+  <!-- Unified color grade: warm gold + lavender haze + soft brown vignette -->
+  <div class="intro-color-grade" aria-hidden="true"></div>
+
+  <!-- Floating dust particles -->
+  <canvas id="dustCanvas" aria-hidden="true"></canvas>
+
+  <!-- Floating smoke mist (canvas — no rectangle artifacts) -->
+  <canvas id="mistCanvas" aria-hidden="true"></canvas>
+
+  <!-- Champagne burst particles (canvas physics) -->
+  <canvas id="burstCanvas" aria-hidden="true"></canvas>
+
+  <!-- Top wordmark -->
+  <div class="intro-wordmark" id="introWordmark" aria-hidden="true">
+    <span class="wm-line">You are cordially invited</span>
+  </div>
+
+  <!-- Thin rule — separates badge from scene -->
+  <div class="intro-rule" aria-hidden="true"></div>
+
+  <!-- ── Bottle scene ── -->
+  <div class="b-scene" id="bScene">
+
+    <!-- Contact shadow on marble surface -->
+    <img class="b-shadow" id="bShadow"
+         src="assets/intro/cv-champ-el-shadow-x.webp"
+         alt="" aria-hidden="true" decoding="async" draggable="false">
+
+    <!-- Composite bottle stack
+         All layers generated at identical canvas dimensions.
+         They register pixel-perfectly when stacked at same CSS size. -->
+    <div class="b-stack" id="bStack">
+
+      <!-- Layer 1 — bottle body (base) -->
+      <img class="b-body"
+           src="assets/intro/cv-champ-el-bottle-body-x.webp"
+           alt="Champagne bottle" draggable="false" decoding="async">
+
+      <!-- Label overlay — premium crest label with oval gold border -->
+      <div class="b-label" aria-hidden="true">
+        <div class="b-label-crest">
+          <div class="b-label-initials">
+            <span class="bl-initial">C</span>
+            <span class="bl-amp">&amp;</span>
+            <span class="bl-initial">J</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cork — interactive element. Foil is baked into the bottle image.
+           Cork cap protrudes above the bottle mouth; lower body inserts into neck. -->
+      <button class="cork-btn" id="corkBtn" type="button"
+              aria-label="Push the cork to begin the celebration">
+        <span class="cork-ring" aria-hidden="true"></span>
+        <span class="cork-ring" aria-hidden="true"></span>
+        <img class="cork-img" id="corkImg"
+             src="assets/intro/cv-champ-el-cork-x.webp"
+             alt="" draggable="false" decoding="async">
+        <span class="cork-halo" id="corkHalo" aria-hidden="true"></span>
+      </button>
+
+    </div><!-- /b-stack -->
+
+    <!-- Pre-pop fizz — subtle champagne bubbles rising near cork -->
+    <div class="cork-fizz" id="corkFizz" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- FX: champagne eruption layers (hidden until pop) -->
+    <img class="b-fx b-neck-foam" id="bNeckFoam"
+         src="assets/intro/cv-champ-fx-neck-foam-x.webp"
+         alt="" aria-hidden="true" decoding="async">
+
+    <img class="b-fx b-mist" id="bMist"
+         src="assets/intro/cv-champ-fx-mist-burst-x.webp"
+         alt="" aria-hidden="true" decoding="async">
+
+  </div><!-- /b-scene -->
+
+  <!-- Cinematic flash — warm burst from bottle mouth on pop (CSS only) -->
+  <div class="intro-flash" id="introFlash" aria-hidden="true"></div>
+
+  <!-- Cork-area spot flash — fires first, blooms outward -->
+  <div class="intro-flash-spot" id="introFlashSpot" aria-hidden="true"></div>
+
+  <!-- Ivory bloom — post-pop cinematic overexposure before hero reveal -->
+  <div class="intro-ivory-bloom" id="introBloom" aria-hidden="true"></div>
+
+  <!-- Instruction cue (below bottle) -->
+  <p class="intro-cue" id="introCue" aria-live="polite">
+    Hold the cork to begin
+  </p>
+
+  <button class="intro-skip" id="introSkip" type="button">skip intro</button>
+
+</section>
+
+<!-- ═══════════════════════════════════
+     PAGE SHELL — sections load below
+═══════════════════════════════════ -->
+<main class="page-shell" id="pageShell">
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO SECTION — Video with animated names overlay
+  ═══════════════════════════════════════════════════ -->
+  <section class="hero" id="heroSection" aria-label="Hero video">
+
+    <!-- White curtain line transition -->
+    <div class="hero-wipe" id="heroWipe" aria-hidden="true">
+      <div class="hero-wipe-line" id="heroWipeLine"></div>
+    </div>
+
+    <!-- Full-bleed background video -->
+    <video
+      class="hero-video"
+      id="heroVideo"
+      src="assets/Hero/Intro_Video.mp4"
+      poster="assets/Hero/hero_poster.webp"
+      playsinline
+      muted
+      loop
+      preload="auto"
+      aria-hidden="true"
+    ></video>
+
+    <!-- Dark cinematic overlay — keeps text legible over video -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Animated text overlay -->
+    <div class="hero-text" id="heroText" aria-label="Catherine and James, 12 December 2026">
+
+      <p class="ht-eyebrow" id="htEyebrow">With faith, love &amp; joy</p>
+
+      <div class="ht-names-wrap" id="htNamesWrap">
+        <span class="ht-name ht-name--bride" id="htBride">
+          <span class="ht-name-inner">Catherine</span>
+        </span>
+        <em class="ht-amp" id="htAmp">&amp;</em>
+        <span class="ht-name ht-name--groom" id="htGroom">
+          <span class="ht-name-inner">James</span>
+        </span>
+      </div>
+
+      <div class="ht-rule" aria-hidden="true" id="htRule">
+        <span class="ht-rule-line"></span>
+        <svg class="ht-rule-ornament" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="1.7" fill="rgba(60,42,12,0.55)"/>
+          <path d="M11 3v5M11 14v5M3 11h5M14 11h5" stroke="rgba(60,42,12,0.40)" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M5.5 5.5l3.4 3.4M13.1 13.1l3.4 3.4M16.5 5.5l-3.4 3.4M8.9 13.1l-3.4 3.4" stroke="rgba(60,42,12,0.25)" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>
+        <span class="ht-rule-line"></span>
+      </div>
+
+      <p class="ht-date" id="htDate">12th Dec 2026</p>
+      <p class="ht-venue" id="htVenue">Immaculate Conception, Goa</p>
+
+    </div>
+
+    <!-- Scroll down cue — appears after hero text is fully revealed -->
+    <button class="hero-scroll-cue" id="heroScrollCue" type="button"
+            aria-label="Scroll to invitation">
+      <span class="hsc-label">Discover</span>
+      <span class="hsc-arrow" aria-hidden="true">
+        <svg width="27" height="27" viewBox="0 0 22 22" fill="none">
+          <path d="M11 4v14" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round"/>
+          <path d="M5 12.5l6 6 6-6" stroke="currentColor" stroke-width="1.9"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       INVITE SECTION — Premium closed-cover opening animation
+  ═══════════════════════════════════════════════════════ -->
+  <section class="invite" id="inviteSection" aria-label="Invitation">
+
+    <!-- Full-bleed background — chapel-garden atmosphere -->
+    <img class="inv-bg" src="assets/Invite/template10-invite-bg-m.webp"
+         alt="" aria-hidden="true" decoding="async" loading="lazy">
+
+    <!-- Edge vignettes — only top/bottom, keep center clean -->
+    <div class="inv-atm-top" aria-hidden="true"></div>
+    <div class="inv-atm-bot" aria-hidden="true"></div>
+
+    <!-- Dove sprite — 6-frame flapping animation at top of section -->
+    <div class="inv-dove" aria-hidden="true">
+      <img class="inv-dove-sprite"
+           src="assets/Invite/dove.webp"
+           alt="" draggable="false" decoding="async" loading="lazy">
+    </div>
+
+    <!-- Invitation scene — floats as one unit -->
+    <div class="inv-scene-wrap" id="invSceneWrap">
+
+      <!-- Ambient glow halo behind the stack -->
+      <div class="inv-glow-back" aria-hidden="true"></div>
+      <div class="inv-glow"      aria-hidden="true"></div>
+
+      <!-- 3D perspective stationery stack -->
+      <div class="inv-stack" id="invStack">
+
+        <!-- ① vellum_layer_2 — bottommost, offset for depth -->
+        <img class="inv-vellum inv-vellum--2"
+             src="assets/Invite/vellum_layer_2.webp"
+             alt="" aria-hidden="true" decoding="async" loading="lazy" draggable="false">
+
+        <!-- ② vellum_layer_1 — middle vellum layer -->
+        <img class="inv-vellum inv-vellum--1"
+             src="assets/Invite/vellum_layer_1.webp"
+             alt="" aria-hidden="true" decoding="async" loading="lazy" draggable="false">
+
+        <!-- ③ invite_inner_card — sets stack height; holds live text -->
+        <div class="inv-inner-card-wrap">
+          <img class="inv-inner-card-img"
+               src="assets/Invite/invite_inner_card.webp"
+               alt="Wedding invitation inner card" decoding="async" loading="lazy" draggable="false">
+
+          <!-- Live invitation text — animates in after cover opens -->
+          <div class="inv-body" id="invBody">
+
+            <!-- Grandparents — hidden by default, shown when showGrandparents is true -->
+            <div class="inv-grandparents inv-reveal" id="invGrandparents" data-delay="0" style="display:none;font-size:0.72rem;color:rgba(60,42,12,0.62);text-align:center;line-height:1.7;margin:0 0 4px;font-family:inherit;">
+              <p class="inv-gp-line" id="invBrideGP"></p>
+              <span class="inv-gp-and" style="opacity:0.5;">&amp;</span>
+              <p class="inv-gp-line" id="invGroomGP"></p>
+            </div>
+
+            <!-- Blessing line — the only editable prose; builder's "Opening
+                 Blessing" field overrides this via id="invRequest". No other
+                 default sentence lines below it. -->
+            <p class="inv-request inv-reveal" id="invRequest" data-delay="60">
+              With the blessings of the Divine<br>and the love of our families
+            </p>
+
+            <!-- Ornament rule -->
+            <div class="inv-rule-wrap inv-reveal" data-delay="340" aria-hidden="true">
+              <span class="inv-rule-line"></span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+                <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                      stroke="rgba(201,168,76,0.50)" stroke-width="0.7"
+                      stroke-linecap="round" opacity="0.45"/>
+              </svg>
+              <span class="inv-rule-line"></span>
+            </div>
+
+            <!-- Couple names -->
+            <div class="inv-names inv-reveal" data-delay="480">
+              <span class="inv-name" id="invName1">Catherine</span>
+              <em class="inv-amp inv-reveal" data-delay="620">&amp;</em>
+              <span class="inv-name" id="invName2">James</span>
+            </div>
+
+            <!-- Ornament rule -->
+            <div class="inv-rule-wrap inv-reveal" data-delay="780" aria-hidden="true">
+              <span class="inv-rule-line"></span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+                <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                      stroke="rgba(201,168,76,0.50)" stroke-width="0.7"
+                      stroke-linecap="round" opacity="0.45"/>
+              </svg>
+              <span class="inv-rule-line"></span>
+            </div>
+
+            <!-- Parent names with role labels — below couple names -->
+            <div class="inv-parents inv-reveal" data-delay="920">
+              <span class="inv-parent-role">Daughter of</span>
+              <p class="inv-parent-line" id="invBrideParents">Mr. &amp; Mrs. Michael D&apos;Souza</p>
+              <span class="inv-parent-and">&amp;</span>
+              <span class="inv-parent-role">Son of</span>
+              <p class="inv-parent-line" id="invGroomParents">Mr. &amp; Mrs. Robert Fernandes</p>
+            </div>
+
+          </div><!-- /inv-body -->
+        </div><!-- /inv-inner-card-wrap -->
+
+        <!-- Cover floor shadow — shrinks as cover lifts -->
+        <div class="inv-cover-shadow" id="invCoverShadow" aria-hidden="true"></div>
+
+        <!-- ④ 3D cover — front face (closed) / inside face (revealed during open) -->
+        <div class="inv-cover-3d" id="invCover3d">
+          <!-- Front face — invite_cover_front.webp -->
+          <div class="inv-cover-front">
+            <img src="assets/Invite/invite_cover_front.webp"
+                 alt="" decoding="async" loading="lazy" draggable="false">
+          </div>
+          <!-- Inside face — invite_cover_inside.webp (backface, visible mid-flip) -->
+          <div class="inv-cover-inside">
+            <img src="assets/Invite/invite_cover_inside.webp"
+                 alt="" decoding="async" loading="lazy" draggable="false">
+          </div>
+        </div><!-- /inv-cover-3d -->
+
+      </div><!-- /inv-stack -->
+    </div><!-- /inv-scene-wrap -->
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       EVENTS SECTION — Floating vellum event notes
+  ═══════════════════════════════════════════════════════ -->
+  <section class="events" id="eventsSection" aria-label="Wedding events">
+
+    <!-- CSS-only layered atmosphere — expands with any number of events -->
+    <div class="ev-atm-top"    aria-hidden="true"></div>
+    <div class="ev-atm-bot"    aria-hidden="true"></div>
+    <div class="ev-atm-mid"    aria-hidden="true"></div>
+
+    <!-- Floating glow orbs — purely decorative, no image dependency -->
+    <div class="ev-orb ev-orb--1" aria-hidden="true"></div>
+    <div class="ev-orb ev-orb--2" aria-hidden="true"></div>
+    <div class="ev-orb ev-orb--3" aria-hidden="true"></div>
+
+    <!-- Section header -->
+    <header class="ev-header">
+      <p class="ev-eyebrow ev-reveal" data-delay="0">Join us to celebrate</p>
+      <h2 class="ev-title ev-reveal" data-delay="130">Events</h2>
+      <div class="ev-rule-wrap ev-reveal" data-delay="270" aria-hidden="true">
+        <span class="ev-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(201,168,76,0.50)" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="ev-rule-line"></span>
+      </div>
+    </header>
+
+    <!-- Event cards — add or remove freely, layout adjusts automatically -->
+    <div class="ev-grid" id="evGrid">
+
+      <!-- Card 1: Welcome Dinner — odd card, has cupid -->
+      <div class="ev-card-wrap ev-reveal" data-delay="80">
+        <div class="ev-card-cupid" aria-hidden="true">
+          <div class="ev-cupid-clip">
+            <img src="assets/Events/Cupid.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+        </div>
+        <div class="ev-card">
+          <img class="ev-card-img" src="assets/Events/Event_Card.webp"
+               alt="" decoding="async" loading="lazy" draggable="false">
+          <div class="ev-card-body">
+            <div class="ev-card-illus">
+              <img src="assets/Events/Welcome_Dinner.webp" alt="Welcome Dinner" decoding="async" loading="lazy" draggable="false">
+            </div>
+            <p class="ev-card-label">Welcome Dinner</p>
+            <p class="ev-card-date">11 December 2026</p>
+            <div class="ev-card-rule" aria-hidden="true"></div>
+            <p class="ev-card-time">7:00 PM</p>
+            <p class="ev-card-desc" style="font-size:1.12rem;color:rgba(60,42,12,0.58);line-height:1.65;margin:5px 0;padding:0 5%;font-style:italic;font-family:inherit;">A warm gathering of family and friends the evening before the wedding — share stories, laughter, and a candlelit meal.</p>
+            <p class="ev-card-venue">Fernandes Estate</p>
+            <p class="ev-card-addr">Panaji, Goa</p>
+            <a class="ev-card-maps" href="https://maps.google.com/?q=Panaji+Goa" target="_blank" rel="noopener">
+              <svg width="12" height="15" viewBox="0 0 9 11" fill="none" aria-hidden="true"><path d="M4.5 0C2.57 0 1 1.57 1 3.5C1 6.125 4.5 10.5 4.5 10.5S8 6.125 8 3.5C8 1.57 6.43 0 4.5 0ZM4.5 4.75C3.81 4.75 3.25 4.19 3.25 3.5C3.25 2.81 3.81 2.25 4.5 2.25C5.19 2.25 5.75 2.81 5.75 3.5C5.75 4.19 5.19 4.75 4.5 4.75Z" fill="currentColor"/></svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Holy Matrimony — even card, right cupid -->
+      <div class="ev-card-wrap ev-reveal" data-delay="230">
+        <div class="ev-card-cupid-right" aria-hidden="true">
+          <div class="ev-cupid-clip">
+            <img src="assets/Events/Cupid_right.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+          <div class="ev-cupid-arrow-wrap">
+            <img class="ev-cupid-arrow" src="assets/Events/Arrow.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+        </div>
+        <div class="ev-card">
+          <img class="ev-card-img" src="assets/Events/Event_Card.webp"
+               alt="" decoding="async" loading="lazy" draggable="false">
+          <div class="ev-card-body">
+            <div class="ev-card-illus">
+              <img src="assets/Events/Wedding_Ceremony.webp" alt="Holy Matrimony" decoding="async" loading="lazy" draggable="false">
+            </div>
+            <p class="ev-card-label">Holy Matrimony</p>
+            <p class="ev-card-date">12 December 2026</p>
+            <div class="ev-card-rule" aria-hidden="true"></div>
+            <p class="ev-card-time">11:00 AM</p>
+            <p class="ev-card-desc" style="font-size:1.12rem;color:rgba(60,42,12,0.58);line-height:1.65;margin:5px 0;padding:0 5%;font-style:italic;font-family:inherit;">The sacred ceremony where vows are exchanged and two hearts become one before God and all who love them.</p>
+            <p class="ev-card-venue">Immaculate Conception</p>
+            <p class="ev-card-addr">Panaji, Goa</p>
+            <a class="ev-card-maps" href="https://maps.google.com/?q=Our+Lady+of+Immaculate+Conception+Panaji+Goa" target="_blank" rel="noopener">
+              <svg width="12" height="15" viewBox="0 0 9 11" fill="none" aria-hidden="true"><path d="M4.5 0C2.57 0 1 1.57 1 3.5C1 6.125 4.5 10.5 4.5 10.5S8 6.125 8 3.5C8 1.57 6.43 0 4.5 0ZM4.5 4.75C3.81 4.75 3.25 4.19 3.25 3.5C3.25 2.81 3.81 2.25 4.5 2.25C5.19 2.25 5.75 2.81 5.75 3.5C5.75 4.19 5.19 4.75 4.5 4.75Z" fill="currentColor"/></svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Wedding Breakfast — odd card, has cupid -->
+      <div class="ev-card-wrap ev-reveal" data-delay="380">
+        <div class="ev-card-cupid" aria-hidden="true">
+          <div class="ev-cupid-clip">
+            <img src="assets/Events/Cupid.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+          <div class="ev-cupid-petal-wrap"><img class="ev-cupid-petal" src="assets/Events/petal.webp" alt="" draggable="false" decoding="async" loading="lazy"></div>
+        </div>
+        <div class="ev-card">
+          <img class="ev-card-img" src="assets/Events/Event_Card.webp"
+               alt="" decoding="async" loading="lazy" draggable="false">
+          <div class="ev-card-body">
+            <div class="ev-card-illus">
+              <img src="assets/Events/Reception.webp" alt="Wedding Breakfast" decoding="async" loading="lazy" draggable="false">
+            </div>
+            <p class="ev-card-label">Wedding Breakfast</p>
+            <p class="ev-card-date">12 December 2026</p>
+            <div class="ev-card-rule" aria-hidden="true"></div>
+            <p class="ev-card-time">1:00 PM</p>
+            <p class="ev-card-desc" style="font-size:1.12rem;color:rgba(60,42,12,0.58);line-height:1.65;margin:5px 0;padding:0 5%;font-style:italic;font-family:inherit;">An elegant celebration lunch with family and close friends in the hours following the ceremony.</p>
+            <p class="ev-card-venue">Vivanta Goa</p>
+            <p class="ev-card-addr">Panaji, Goa</p>
+            <a class="ev-card-maps" href="https://maps.google.com/?q=Vivanta+Goa+Panaji" target="_blank" rel="noopener">
+              <svg width="12" height="15" viewBox="0 0 9 11" fill="none" aria-hidden="true"><path d="M4.5 0C2.57 0 1 1.57 1 3.5C1 6.125 4.5 10.5 4.5 10.5S8 6.125 8 3.5C8 1.57 6.43 0 4.5 0ZM4.5 4.75C3.81 4.75 3.25 4.19 3.25 3.5C3.25 2.81 3.81 2.25 4.5 2.25C5.19 2.25 5.75 2.81 5.75 3.5C5.75 4.19 5.19 4.75 4.5 4.75Z" fill="currentColor"/></svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Evening Celebration — even card, right cupid -->
+      <div class="ev-card-wrap ev-reveal" data-delay="530">
+        <div class="ev-card-cupid-right" aria-hidden="true">
+          <div class="ev-cupid-clip">
+            <img src="assets/Events/Cupid_right.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+          <div class="ev-cupid-arrow-wrap">
+            <img class="ev-cupid-arrow" src="assets/Events/Arrow.webp" alt="" draggable="false" decoding="async" loading="lazy">
+          </div>
+        </div>
+        <div class="ev-card">
+          <img class="ev-card-img" src="assets/Events/Event_Card.webp"
+               alt="" decoding="async" loading="lazy" draggable="false">
+          <div class="ev-card-body">
+            <div class="ev-card-illus">
+              <img src="assets/Events/After_Party.webp" alt="Evening Celebration" decoding="async" loading="lazy" draggable="false">
+            </div>
+            <p class="ev-card-label">Evening Celebration</p>
+            <p class="ev-card-date">12 December 2026</p>
+            <div class="ev-card-rule" aria-hidden="true"></div>
+            <p class="ev-card-time">7:30 PM</p>
+            <p class="ev-card-desc" style="font-size:1.12rem;color:rgba(60,42,12,0.58);line-height:1.65;margin:5px 0;padding:0 5%;font-style:italic;font-family:inherit;">A grand evening reception to celebrate, dance, and make memories that will last a lifetime.</p>
+            <p class="ev-card-venue">Vivanta Goa</p>
+            <p class="ev-card-addr">Panaji, Goa</p>
+            <a class="ev-card-maps" href="https://maps.google.com/?q=Vivanta+Goa+Panaji" target="_blank" rel="noopener">
+              <svg width="12" height="15" viewBox="0 0 9 11" fill="none" aria-hidden="true"><path d="M4.5 0C2.57 0 1 1.57 1 3.5C1 6.125 4.5 10.5 4.5 10.5S8 6.125 8 3.5C8 1.57 6.43 0 4.5 0ZM4.5 4.75C3.81 4.75 3.25 4.19 3.25 3.5C3.25 2.81 3.81 2.25 4.5 2.25C5.19 2.25 5.75 2.81 5.75 3.5C5.75 4.19 5.19 4.75 4.5 4.75Z" fill="currentColor"/></svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ev-grid -->
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       STORY SECTION — Cinematic love letter
+  ═══════════════════════════════════════════════════════ -->
+  <section class="story" id="storySection" aria-label="Our Story">
+
+    <!-- Full-bleed background -->
+    <img class="st-bg" src="assets/Meet%20the%20couple/Meet_the_couple_bg.webp"
+         alt="" aria-hidden="true" decoding="async" loading="lazy">
+
+    <!-- Atmospheric vignettes -->
+    <div class="st-atm-top" aria-hidden="true"></div>
+    <div class="st-atm-bot" aria-hidden="true"></div>
+
+    <!-- Floating glow orbs -->
+    <div class="st-orb st-orb--1" aria-hidden="true"></div>
+    <div class="st-orb st-orb--2" aria-hidden="true"></div>
+
+    <!-- Petal shower -->
+    <div class="st-petal-shower" id="stPetalShower" aria-hidden="true"></div>
+
+    <!-- Section header -->
+    <header class="st-header">
+      <p class="st-eyebrow st-reveal" data-delay="0">The Story Before Forever</p>
+      <h2 class="st-title st-reveal" data-delay="130">Our Story</h2>
+      <div class="st-rule-wrap st-reveal" data-delay="270" aria-hidden="true">
+        <span class="st-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(201,168,76,0.50)" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="st-rule-line"></span>
+      </div>
+    </header>
+
+    <!-- Floating letter -->
+    <div class="st-letter-wrap" id="stLetterWrap">
+      <div class="st-letter-glow-back" aria-hidden="true"></div>
+      <div class="st-letter-glow"      aria-hidden="true"></div>
+      <div class="st-letter" id="stLetter">
+
+        <img class="st-letter-img" src="assets/Meet%20the%20couple/Paper.webp"
+             alt="Love letter" decoding="async" loading="lazy" draggable="false">
+
+        <div class="st-letter-body" id="stLetterBody">
+
+          <!-- Top ornament -->
+          <div class="st-top-ornament" aria-hidden="true">
+            <span class="st-orn-line"></span>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M7.5 1.5L9 6L13.5 7.5L9 9L7.5 13.5L6 9L1.5 7.5L6 6Z"
+                    fill="none" stroke="rgba(148,118,76,0.42)" stroke-width="0.85"
+                    stroke-linejoin="round"/>
+            </svg>
+            <span class="st-orn-line"></span>
+          </div>
+
+          <!-- Story lines — each revealed handwriting-style -->
+          <p class="st-line" data-delay="200">It began with a glance across a quiet cathedral nave,</p>
+          <p class="st-line" data-delay="1350">a moment neither of us planned, yet both of us remember</p>
+          <p class="st-line" data-delay="2500">as the day the world gently shifted on its axis.</p>
+          <p class="st-line" data-delay="3650">Through every season, every prayer, every quiet hour —</p>
+          <p class="st-line" data-delay="4800">we found in each other a love worth forever.</p>
+
+          <!-- Divider -->
+          <div class="st-letter-divider" data-delay="5800" aria-hidden="true">
+            <span class="st-div-line"></span>
+            <span class="st-div-heart">♡</span>
+            <span class="st-div-line"></span>
+          </div>
+
+          <!-- Closing signature -->
+          <p class="st-signature" data-delay="6200">With love,<br>Catherine &amp; James</p>
+
+        </div><!-- /st-letter-body -->
+      </div><!-- /st-letter -->
+    </div><!-- /st-letter-wrap -->
+
+    <!-- Bouquet centrepiece — sits below the letter card, bridging card bottom and background -->
+    <div class="st-bouquet-wrap" id="stBouquetWrap" aria-hidden="true">
+      <img class="st-bouquet" id="stBouquet"
+           src="assets/Meet%20the%20couple/bouquet.webp"
+           alt="" decoding="async" loading="lazy" draggable="false">
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       GALLERY SECTION — Captured in Grace
+       Sticky scroll-driven composition.
+       data-count="1|2|3|4" controls visible photos.
+       TO REPLACE IMAGES: swap each img src below.
+         ① gl-frame--hero   — hero photo (center, first)
+         ② gl-frame--left   — slides in from left
+         ③ gl-frame--right  — slides in from right
+         ④ gl-frame--bottom — rises from below
+  ═══════════════════════════════════════════════════════ -->
+  <section class="gallery" id="gallerySection" data-count="4" aria-label="Gallery">
+
+    <!-- Full-bleed background -->
+    <img class="gl-bg" src="assets/gallery/Gallery_Bg.webp"
+         alt="" aria-hidden="true" decoding="async" loading="lazy">
+
+    <!-- Atmospheric overlays -->
+    <div class="gl-atm-top" aria-hidden="true"></div>
+    <div class="gl-atm-bot" aria-hidden="true"></div>
+
+    <!-- Floating glow orbs -->
+    <div class="gl-orb gl-orb--1" aria-hidden="true"></div>
+    <div class="gl-orb gl-orb--2" aria-hidden="true"></div>
+
+    <!-- Section header — sits above the sticky stage, scrolls away naturally -->
+    <header class="gl-header">
+      <h2 class="gl-title gl-reveal" data-delay="0">Frames of Forever</h2>
+      <div class="gl-rule-wrap gl-reveal" data-delay="270" aria-hidden="true">
+        <span class="gl-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(201,168,76,0.50)" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="gl-rule-line"></span>
+      </div>
+    </header>
+
+    <!-- Scroll track — tall so JS has scroll distance to map to animation progress -->
+    <div class="gl-scroll-track" id="glScrollTrack">
+
+      <!-- Sticky stage — pins to viewport; JS drives all transforms inline -->
+      <div class="gl-stage" id="glStage">
+
+        <!-- ① Hero — always center; starts oversized, settles as sides arrive
+             TO REPLACE: swap src -->
+        <div class="gl-frame gl-frame--hero" id="glHero">
+          <div class="gl-frame-inner">
+            <img src="assets/Demo/Demo_1.webp"
+                 alt="Wedding photo" decoding="async" loading="lazy" draggable="false"
+                 onerror="this.style.visibility='hidden'">
+            <div class="gl-shimmer" aria-hidden="true"></div>
+          </div>
+          <div class="gl-frame-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- ② Left — sweeps in from left as hero shrinks
+             TO REPLACE: swap src -->
+        <div class="gl-frame gl-frame--left" id="glLeft">
+          <div class="gl-frame-inner">
+            <img src="assets/Demo/Demo_2.webp"
+                 alt="Wedding photo" decoding="async" loading="lazy" draggable="false"
+                 onerror="this.style.visibility='hidden'">
+            <div class="gl-shimmer" aria-hidden="true"></div>
+          </div>
+          <div class="gl-frame-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- ③ Right — sweeps in from right
+             TO REPLACE: swap src -->
+        <div class="gl-frame gl-frame--right" id="glRight">
+          <div class="gl-frame-inner">
+            <img src="assets/Demo/Demo_3.webp"
+                 alt="Wedding photo" decoding="async" loading="lazy" draggable="false"
+                 onerror="this.style.visibility='hidden'">
+            <div class="gl-shimmer" aria-hidden="true"></div>
+          </div>
+          <div class="gl-frame-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- ④ Bottom — rises from below
+             TO REPLACE: swap src -->
+        <div class="gl-frame gl-frame--bottom" id="glBottom">
+          <div class="gl-frame-inner">
+            <img src="assets/Demo/Demo_4.webp"
+                 alt="Wedding photo" decoding="async" loading="lazy" draggable="false"
+                 onerror="this.style.visibility='hidden'">
+            <div class="gl-shimmer" aria-hidden="true"></div>
+          </div>
+          <div class="gl-frame-glow" aria-hidden="true"></div>
+        </div>
+
+      </div><!-- /gl-stage -->
+    </div><!-- /gl-scroll-track -->
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       THINGS TO KNOW — Guest essentials
+  ═══════════════════════════════════════════════════════ -->
+  <section class="ttk" id="ttkSection" aria-labelledby="ttkTitle">
+
+    <!-- Layered atmosphere — same gradient language as Events -->
+    <div class="ttk-atm-top"    aria-hidden="true"></div>
+    <div class="ttk-atm-bot"    aria-hidden="true"></div>
+    <div class="ttk-atm-mid"    aria-hidden="true"></div>
+
+    <!-- Floating lavender orbs — purely decorative -->
+    <div class="ttk-orb ttk-orb--1" aria-hidden="true"></div>
+    <div class="ttk-orb ttk-orb--2" aria-hidden="true"></div>
+    <div class="ttk-orb ttk-orb--3" aria-hidden="true"></div>
+
+    <!-- Section header -->
+    <header class="ttk-header">
+      <p class="ttk-eyebrow ttk-reveal" data-delay="0">Guest Essentials</p>
+      <h2 class="ttk-title ttk-reveal" data-delay="130" id="ttkTitle">Things to Know</h2>
+      <div class="ttk-rule-wrap ttk-reveal" data-delay="270" aria-hidden="true">
+        <span class="ttk-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(201,168,76,0.50)" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="ttk-rule-line"></span>
+      </div>
+      <p class="ttk-subline ttk-reveal" data-delay="390">A few thoughtful details to help you celebrate with ease.</p>
+    </header>
+
+    <!-- Cards grid — rendered by JS -->
+    <div class="ttk-grid" id="ttkGrid" role="list" aria-label="Guest information cards"></div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       RSVP SECTION — Soft, cinematic finale
+       The cake video (transparent background) plays as a
+       living illustrated centrepiece while the invitation
+       content sits clearly above it.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rsvp" id="rsvpSection" aria-label="RSVP">
+
+    <!-- ── Layer 1: Full-bleed background video ── -->
+    <video
+      class="rsvp-video"
+      id="rsvpVideo"
+      src="assets/rsvp/end.mp4"
+      poster="assets/rsvp/rsvp_poster.webp"
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-hidden="true"
+    ></video>
+
+    <!-- ── Layer 2: Cinematic overlays — darken edges, keep centre warm ── -->
+    <div class="rsvp-overlay"     aria-hidden="true"></div>
+    <div class="rsvp-overlay-top" aria-hidden="true"></div>
+    <div class="rsvp-overlay-bot" aria-hidden="true"></div>
+
+    <!-- ── Layer 3: All content — animates in cinematically ── -->
+    <div class="rsvp-content" id="rsvpContent">
+
+      <!-- Eyebrow — first to appear -->
+      <p class="rsvp-eyebrow rsvp-reveal" data-delay="0">Join the Celebration</p>
+
+      <!-- Main heading — second -->
+      <h2 class="rsvp-title rsvp-reveal" data-delay="300">Will you join us?</h2>
+
+      <!-- Ornamental rule — third -->
+      <div class="rsvp-rule-wrap rsvp-reveal" data-delay="600" aria-hidden="true">
+        <span class="rsvp-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(46,33,72,0.65)" opacity="0.9"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(46,33,72,0.42)" stroke-width="0.7" stroke-linecap="round"/>
+        </svg>
+        <span class="rsvp-rule-line"></span>
+      </div>
+
+      <!-- Body — fourth -->
+      <p class="rsvp-body rsvp-reveal" data-delay="900">
+        We'd love to celebrate this beautiful day with you.
+      </p>
+
+      <!-- CTA button — fifth -->
+      <div class="rsvp-cta-block rsvp-reveal" data-delay="1200">
+        <a
+          class="rsvp-btn"
+          href="https://wa.me/XXXXXXXXXXXX?text=Yes%2C%20I%27ll%20be%20there"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Confirm attendance via WhatsApp"
+        >
+          Yes, I'll Be There
+        </a>
+        <p class="rsvp-helper">
+          You'll be redirected to WhatsApp to confirm your attendance.
+        </p>
+      </div>
+
+      <!-- Calendar — sixth, last -->
+      <div class="rsvp-calendar rsvp-reveal" data-delay="1500">
+        <p class="rsvp-cal-eyebrow">Save the Date</p>
+        <div class="rsvp-cal-links">
+          <a
+            class="rsvp-cal-btn"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Catherine+%26+James+Wedding&dates=20261212T053000Z/20261212T160000Z&details=Join+us+for+the+wedding+of+Catherine+%26+James&location=Our+Lady+of+the+Immaculate+Conception%2C+Panaji%2C+Goa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Add to Google Calendar"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <rect x="1" y="2" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M1 5.5h12" stroke="currentColor" stroke-width="1"/>
+              <path d="M4 1v3M10 1v3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+            Google Calendar
+          </a>
+          <a
+            class="rsvp-cal-btn"
+            href="https://shaadipath.com/api/calendar?title=Catherine%20weds%20James&date=20261212&location=Our%20Lady%20of%20the%20Immaculate%20Conception%2C%20Panaji%2C%20Goa"
+            aria-label="Download Apple / iCal file"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <rect x="1" y="2" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M1 5.5h12" stroke="currentColor" stroke-width="1"/>
+              <path d="M4 1v3M10 1v3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+              <path d="M7 8v-2.5M7 8l-1.5-1.5M7 8l1.5-1.5" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Apple / iCal
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /rsvp-content -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       COUNTDOWN — final cinematic "last page"
+       id="heroCountdown" so the builder's "Show Countdown"
+       toggle (route-injected #heroCountdown{display:none})
+       enables / disables this whole section.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="countdown" id="heroCountdown" aria-label="Countdown to the wedding">
+
+    <!-- Layered atmosphere -->
+    <div class="cd-atm-top" aria-hidden="true"></div>
+    <div class="cd-atm-bot" aria-hidden="true"></div>
+
+    <!-- Floating glow orbs -->
+    <div class="cd-orb cd-orb--1" aria-hidden="true"></div>
+    <div class="cd-orb cd-orb--2" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="cd-header">
+      <p class="cd-eyebrow cd-reveal" data-delay="0">The Moment Approaches</p>
+      <h2 class="cd-title cd-reveal" data-delay="130">Counting Down</h2>
+      <div class="cd-rule-wrap cd-reveal" data-delay="270" aria-hidden="true">
+        <span class="cd-rule-line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="1.1" fill="rgba(201,168,76,0.75)" opacity="0.7"/>
+          <path d="M7 1.5v3.5M7 9v3.5M1.5 7H5M9 7h3.5"
+                stroke="rgba(201,168,76,0.50)" stroke-width="0.7" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <span class="cd-rule-line"></span>
+      </div>
+    </header>
+
+    <!-- Live countdown grid — driven by initCountdown() in script.js -->
+    <div class="cd-grid cd-reveal" data-delay="400" id="cdGrid" role="timer" aria-live="off">
+      <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-lbl">Days</span></div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-lbl">Hours</span></div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdMins">00</span><span class="cd-lbl">Minutes</span></div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdSecs">00</span><span class="cd-lbl">Seconds</span></div>
+    </div>
+
+    <!-- Shown once the date has passed -->
+    <p class="cd-finished cd-reveal" id="cdFinished" data-delay="400" style="display:none;">
+      The day has arrived — let the celebration begin.
+    </p>
+
+    <!-- Date line -->
+    <p class="cd-date cd-reveal" id="cdDate" data-delay="520">12 &middot; December &middot; 2026</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="siteFooter" aria-label="Footer">
+
+    <!-- Top divider heart -->
+    <div class="ft-divider" aria-hidden="true">
+      <span class="ft-div-line"></span>
+      <svg class="ft-heart" width="20" height="18" viewBox="0 0 20 18" fill="none">
+        <path d="M10 16.5S1 11 1 5.5A4.5 4.5 0 0 1 10 3.5a4.5 4.5 0 0 1 9 2c0 5.5-9 11-9 11Z"
+              fill="currentColor" opacity="0.85"/>
+      </svg>
+      <span class="ft-div-line"></span>
+    </div>
+
+    <!-- Names -->
+    <p class="ft-names ft-reveal" data-delay="60">
+      <span class="ft-name">Catherine</span>
+      <span class="ft-amp">&amp;</span>
+      <span class="ft-name">James</span>
+    </p>
+
+    <!-- Date -->
+    <p class="ft-date ft-reveal" data-delay="160">12th Dec 2026</p>
+
+    <!-- Tagline -->
+    <p class="ft-tagline ft-reveal" data-delay="260">Forever begins today</p>
+
+    <!-- Bottom divider -->
+    <div class="ft-bottom-rule" aria-hidden="true"></div>
+
+  </footer>
+
+</main>
+
+<!-- Navigation cluster — fixed above music button, revealed after intro -->
+<div class="nav-cluster" id="navCluster">
+  <nav class="nav-menu" id="navMenu" aria-label="Page sections">
+    <ul class="nav-menu-list" id="navMenuList"></ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle" type="button"
+          aria-label="Open navigation" aria-expanded="false"
+          aria-controls="navMenu">
+    <!-- Hamburger -->
+    <svg class="nav-icon nav-icon--menu" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <rect x="2" y="4.2"  width="12" height="1.4" rx="0.7" fill="currentColor"/>
+      <rect x="2" y="7.3"  width="12" height="1.4" rx="0.7" fill="currentColor"/>
+      <rect x="2" y="10.4" width="12" height="1.4" rx="0.7" fill="currentColor"/>
+    </svg>
+    <!-- Close X -->
+    <svg class="nav-icon nav-icon--close" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <line x1="2" y1="2"   x2="12" y2="12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="12" y1="2"  x2="2"  y2="12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Background music (preloaded lazily; unlocked + played on cork pop) -->
+<audio id="bgMusic" src="assets/music/Demo_music.mp3" loop preload="none"></audio>
+
+<!-- Music toggle — fades in after champagne pop -->
+<button class="music-btn" id="musicBtn" type="button" aria-label="Mute music">
+  <!-- Playing state: speaker with waves -->
+  <svg class="music-icon music-icon--on" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+    <path d="M15.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M18.5 5.5a9.5 9.5 0 0 1 0 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+  <!-- Muted state: speaker with X -->
+  <svg class="music-icon music-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+    <line x1="15" y1="9" x2="21" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="21" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<script src="script.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var cfg = window.__WEDDING_CONFIG__;
+  if (!cfg || !cfg.invite || cfg.invite.parentsOrder !== 'groom_first') return;
+  var bEl = document.getElementById('iBrideParents');
+  var gEl = document.getElementById('iGroomParents');
+  if (bEl) { var em = bEl.closest('.fam-parents') && bEl.closest('.fam-parents').querySelector('em'); if (em) em.textContent = 'Son of'; }
+  if (gEl) { var em2 = gEl.closest('.fam-parents') && gEl.closest('.fam-parents').querySelector('em'); if (em2) em2.textContent = 'Daughter of'; }
+  /* Template 10 — swap the hardcoded "Daughter of" / "Son of" role labels.
+     buildConfigData already swapped the parent DATA, so #invBrideParents now
+     holds the groom's parents (and must read "Son of") and #invGroomParents
+     holds the bride's parents (and must read "Daughter of"). Without this the
+     labels stay fixed and the swap renders mismatched. */
+  var t10Roles = document.querySelectorAll('.inv-parents .inv-parent-role');
+  if (t10Roles.length >= 2) { t10Roles[0].textContent = 'Son of'; t10Roles[1].textContent = 'Daughter of'; }
+});
+</script>
+<style>
+.sp-blessings{position:relative;z-index:1;max-width:34em;margin:0 auto 34px;text-align:center}
+.sp-bl-group+.sp-bl-group{margin-top:26px}
+.sp-bl-h{margin:0 0 12px;font-family:var(--spb-caps-font);font-size:.68rem;font-weight:400;font-style:normal;letter-spacing:.22em;text-transform:uppercase;line-height:1.5;color:var(--spb-caps-color)}
+.sp-bl-h::after{content:"";display:block;width:28px;height:1px;margin:10px auto 0;background:currentColor;opacity:.45}
+.sp-bl-list{list-style:none;margin:0;padding:0}
+.sp-bl-list li{margin:0;font-family:var(--spb-name-font);font-style:var(--spb-name-style);font-weight:var(--spb-name-weight);font-size:clamp(1rem,4.2vw,1.2rem);letter-spacing:.01em;line-height:1.55;color:var(--spb-name-color);overflow-wrap:anywhere}
+#closing .sp-blessings{margin-bottom:26px}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var cfg = window.__WEDDING_CONFIG__;
+  var b = cfg && cfg.blessings;
+  if (!b || b.show === false || !Array.isArray(b.groups) || document.querySelector('.sp-blessings')) return;
+  var groups = b.groups.map(function(g) {
+    return {
+      h: String((g && g.heading) || '').trim(),
+      n: String((g && g.names) || '').split(/\r?\n/).map(function(s) { return s.trim(); }).filter(Boolean)
+    };
+  }).filter(function(g) { return g.n.length; });
+  if (!groups.length) return;
+
+  /* [insert before, names to borrow the font from, caps line to borrow the colour from] */
+  var SPOTS = [
+    ['#closing .closing-eyebrow', '#closing .closing-names', '#closing .closing-date'],
+    ['#siteFooter .ft-names', '#siteFooter .ft-names', '#siteFooter #ftDate, #siteFooter .ft-date'],
+    ['footer.footer .ft-names', 'footer.footer .ft-names', 'footer.footer .ft-date']
+  ];
+  var spot = null;
+  for (var i = 0; i < SPOTS.length && !spot; i++) {
+    var a = document.querySelector(SPOTS[i][0]);
+    if (a) spot = { anchor: a, names: document.querySelector(SPOTS[i][1]) || a, caps: document.querySelector(SPOTS[i][2]) };
+  }
+  if (!spot) return;
+
+  function visible(c) { return c && c !== 'transparent' && !/rgba\([^)]*,\s*0\)$/.test(c); }
+  /* Footer date lines are often set at 35-45% opacity; a heading borrowing that
+     colour disappears on the darker footers, so floor its alpha at 0.8. */
+  function atLeast(c, min) {
+    var m = /^rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)$/.exec(c);
+    return m && parseFloat(m[4]) < min ? 'rgba(' + m[1] + ',' + m[2] + ',' + m[3] + ',' + min + ')' : c;
+  }
+  var ns = getComputedStyle(spot.names);
+  var cs = spot.caps ? getComputedStyle(spot.caps) : ns;
+  var nameColor = visible(ns.color) ? ns.color : cs.color;
+  /* A script face (template09's closing names are Parisienne) is unreadable as
+     a list — fall back to the caps line's serif, set italic. */
+  var script = /parisienne|vibes|script|allura|tangerine|pinyon|sacramento|brush|italianno|dancing|satisfy|monsieur|petit formal|carattere|rouge|cookie/i.test(ns.fontFamily);
+
+  var wrap = document.createElement('div');
+  wrap.className = 'sp-blessings';
+  wrap.style.setProperty('--spb-name-font', script ? cs.fontFamily : ns.fontFamily);
+  wrap.style.setProperty('--spb-name-style', script ? 'italic' : ns.fontStyle);
+  wrap.style.setProperty('--spb-name-weight', script ? '400' : ns.fontWeight);
+  wrap.style.setProperty('--spb-name-color', nameColor);
+  wrap.style.setProperty('--spb-caps-font', cs.fontFamily);
+  wrap.style.setProperty('--spb-caps-color', atLeast(visible(cs.color) ? cs.color : nameColor, 0.8));
+  groups.forEach(function(g) {
+    var sec = document.createElement('div');
+    sec.className = 'sp-bl-group';
+    if (g.h) {
+      var h = document.createElement('p');
+      h.className = 'sp-bl-h';
+      h.textContent = g.h;
+      sec.appendChild(h);
+    }
+    var ul = document.createElement('ul');
+    ul.className = 'sp-bl-list';
+    g.n.forEach(function(n) { var li = document.createElement('li'); li.textContent = n; ul.appendChild(li); });
+    sec.appendChild(ul);
+    wrap.appendChild(sec);
+  });
+  spot.anchor.parentNode.insertBefore(wrap, spot.anchor);
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { setTimeout(function() {
+  var cfg = window.__WEDDING_CONFIG__, c = cfg && cfg.couple;
+  if (!c || !c.date || !c.endDate) return;
+  var re = /^(\d{4})-(\d{2})-(\d{2})$/, a = re.exec(c.date), z = re.exec(c.endDate);
+  if (!a || !z) return;
+  var t1 = Date.UTC(+a[1], a[2] - 1, +a[3]), t2 = Date.UTC(+z[1], z[2] - 1, +z[3]);
+  var span = (t2 - t1) / 86400000;
+  if (span < 1 || span > 14) return;
+  var LONG = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var A = { d: +a[3], m: +a[2] - 1, y: +a[1] }, Z = { d: +z[3], m: +z[2] - 1, y: +z[1] };
+  function suf(n) { var v = n % 100, l = n % 10; return (v > 10 && v < 14) ? 'th' : l === 1 ? 'st' : l === 2 ? 'nd' : l === 3 ? 'rd' : 'th'; }
+  /* o: { month:'long'|'short', ord:false|'plain'|'sup', dots:bool } → HTML */
+  function day(x, o) { return o.ord === 'sup' ? x.d + '<sup class="date-ord">' + suf(x.d) + '</sup>' : o.ord ? x.d + suf(x.d) : String(x.d); }
+  /* Each date unit is unbreakable and the dash stays on the first line, so a
+     narrow hero wraps as "30th Nov – / 2nd Dec 2026", never "2nd / Dec".
+     The space between units must sit OUTSIDE the nowrap spans — two nowrap
+     spans with nothing between them are one unbreakable line. */
+  function nw(s) { return '<span style="white-space:nowrap">' + s + '</span>'; }
+  function range(o) {
+    var M = o.month === 'short' ? SHORT : LONG, sep = o.dots ? ' &middot; ' : ' ', dash = '&nbsp;&ndash;';
+    if (A.y !== Z.y) return nw(day(A, o) + ' ' + M[A.m] + ' ' + A.y + dash) + ' ' + nw(day(Z, o) + ' ' + M[Z.m] + ' ' + Z.y);
+    if (A.m !== Z.m) return nw(day(A, o) + ' ' + M[A.m] + dash) + ' ' + nw(day(Z, o) + ' ' + M[Z.m] + sep + Z.y);
+    return nw(day(A, o) + dash + ' ' + day(Z, o)) + sep + nw(M[Z.m] + sep + Z.y);
+  }
+  var venue = String(c.venue || '').replace(/[&<>"]/g, function(ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]; });
+  var LONG_PLAIN = { month: 'long' }, LONG_SUP = { month: 'long', ord: 'sup' }, SHORT_SUP = { month: 'short', ord: 'sup' };
+  /* [selector, format, append venue]. First match wins per element. */
+  var SPOTS = [
+    ['#heroDate', SHORT_SUP],                                   /* t11, t13 */
+    ['#inviteDate', LONG_SUP],                                  /* t11 */
+    ['#ftDate', LONG_SUP],                                      /* t11, t13 */
+    ['#htDate', { month: 'short', ord: 'plain' }],              /* t10 hero */
+    ['#siteFooter .ft-date', { month: 'short', ord: 'plain' }], /* t10 footer */
+    ['#introDate', LONG_PLAIN],                                 /* t09 intro */
+    ['.inv-date', LONG_PLAIN],                                  /* t09 invitation */
+    ['.closing-date', { month: 'long', dots: true }],           /* t09 closing card */
+    ['footer.footer .ft-date', LONG_PLAIN, true],               /* t01-t08 footer */
+    ['.pl-date-injected, .pl-date, .pre-date, .preloader-date', LONG_PLAIN] /* intro screens */
+  ];
+  var done = [];
+  SPOTS.forEach(function(s) {
+    document.querySelectorAll(s[0]).forEach(function(el) {
+      if (done.indexOf(el) !== -1) return;
+      done.push(el);
+      el.innerHTML = range(s[1]) + (s[2] && venue ? ' &middot; ' + venue : '');
+    });
+  });
+}, 0); });
+</script>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.defaultPrevented) return;
+  var link = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+  if (!link) return;
+  var href = link.getAttribute('href') || '';
+  if (!href || href === '#') return;
+  var id = href.slice(1);
+  try { id = decodeURIComponent(id); } catch (_) {}
+  var target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+</body>
+</html>
